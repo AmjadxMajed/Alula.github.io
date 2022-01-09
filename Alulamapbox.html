@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <title>Map Project</title>
+    <style>
+        #mapid {
+            height: 600px;
+            width: 800px;
+            margin: 5rem auto;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="mapid"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+
+    <script>
+        const apikey = 'pk.eyJ1IjoiYW1qYWR4bSIsImEiOiJja28xMHhqdjQwNDFxMm9vM2VhNTdzb3N2In0.vstUmoXFuNg-SIfYs0LkMw'
+
+        var mymap = L.map('mapid').setView([26.684292, 37.940025], 11);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: apikey
+        }).addTo(mymap);
+
+
+        const marker = L.marker([26.807, 37.948]).addTo(mymap);
+        let templateHegra = `
+<div style="text-align:center">
+  <h2> Hegra </h2>
+  <img src="img2/pic4.png" alt="" width="70%" height="70%">  <br>
+  <h3> - Saudi Arabia’s first UNESCO World Heritage Site, and the 
+largest preserved site of the Nabataean civilisation south 
+of Petra. In addition to viewing 
+Hegra's signature tombs carved from giant rock formations. </h3>
+</div>
+`
+        marker.bindPopup(templateHegra);
+
+        const marker2 = L.marker([26.774, 37.961]).addTo(mymap);
+        let templateQasr = `
+<div style="text-align:center">
+  <h2> Qasr Alfarid </h2>
+  <img src="img2/qASR.jpg" alt="" width="50%" height="50%">  <br>
+  <h3> - It's located in the Nabatean tombs in Madain Saleh, Al-Ula Governorate.
+  It is one of the most famous and largest of these tombs.
+  The number of graves inside the palace reaches 131, and it is characterized
+  by a huge northern façade in which the precision and beauty of sculpture
+  is noted, as well as it contains two additional columns in the middle of
+  the facade, and despite this accuracy and beauty of sculpture, the unique 
+ palace is incomplete. </h3>
+</div>
+`
+        marker2.bindPopup(templateQasr);
+
+        const marker3 = L.marker([26.687, 37.900]).addTo(mymap);
+        let templateEkmah = `
+<div style="text-align:center">
+  <h2> Ekmah Heritage Mountain </h2>
+  <img src="img2/Ekmah.jpg" alt="" width="70%" height="70%">  <br>
+  <h3> - Ekmh is an archaeological site located in the northwest province 
+  of Alula, it contains writings and inscriptions dating back to the 
+  ancient civilization Alalehyanah in the sixth century BC 
+  to the second century BC, a narrow valley descended from Mount Ekmh. </h3>
+</div>
+`
+        marker3.bindPopup(templateEkmah);
+
+        const marker4 = L.marker([26.689, 37.982]).addTo(mymap);
+        let templateEleph = `
+<div style="text-align:center">
+  <h2> Elephant Rock </h2>
+  <img src="img2/pic6.png" alt="" width="70%" height="70%">  <br>
+  <h3> - ALSO KNOWN AS JABAL ALFIL, One of alula's many geological marvels.
+  Unlike the ornate, hand-carved facades of nearby Hegra’s 
+  Nabataean tombs, the "trunk" and "body" of this monolithic red sandstone 
+  beast were hewn by natural forces — millions of years. </h3>
+</div>
+`
+        marker4.bindPopup(templateEleph);
+
+        const marker5 = L.marker([26.647, 37.917]).addTo(mymap);
+        let templateLion = `
+<div style="text-align:center">
+  <h2> Lion Tomb </h2>
+  <img src="img2/lion.jpg" alt="" width="70%" height="70%">  <br>
+  <h3> - It is a group of ancient tombs carved on its facade with
+   a drawing of four lions, located in Al-Ula, It dates 
+  back to the fifth century BC,in the 
+  first period of the Dadan Kingdom, which ruled the region. </h3>
+</div>
+`
+        marker5.bindPopup(templateLion);
+
+        const marker6 = L.marker([26.626, 37.915]).addTo(mymap);
+        let templateOld = `
+<div style="text-align:center">
+  <h2> AlUla Old Town </h2>
+  <img src="img2/pic1.png" alt="" width="70%" height="70%">  <br>
+  <h3> - Is where pilgrims, Travellers, And 
+  permanent settlers congregated throuhout the ages. </h3>
+</div>
+`
+        marker6.bindPopup(templateOld);
+
+
+    </script>
+</body>
+
+</html>
